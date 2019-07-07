@@ -71,6 +71,7 @@ display: none;
 }
 .page__main-title {
   margin: 0 0 200px 0;
+  width: 100px;
   font-family: "Roboto Slab", sans-serif;
   text-transform: uppercase;
   color: white;
@@ -100,8 +101,25 @@ display: none;
 
 /* Tablet */
 @media all and (min-width: 768px){
-  .page__wrapper{
+  .page__wrapper {
     margin: 0 60px;
     max-width: 990px;
+  }
+
+  .page__main-title {
+    font-size: 50px;
+    width: 100px;
+  }
+}
+
+/* Desktop */
+@media all and (min-width: 1024px){
+  .page__wrapper {
+    margin: auto auto;
+    max-width: 990px;
+  }
+
+  .page__main-title {
+    font-size: 100px;
   }
 }
