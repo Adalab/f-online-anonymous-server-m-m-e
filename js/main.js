@@ -7,6 +7,7 @@ const menu = document.querySelector('.nav');
 
 const handleMenu = () => {
   menu.classList.toggle('active');
+  menuTrigger.classList.toggle('hidden');
 } 
 
 menuTrigger.addEventListener('click', handleMenu);

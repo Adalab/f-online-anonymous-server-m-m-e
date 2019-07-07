@@ -24,11 +24,13 @@ body {
   display: flex;
   justify-content: flex-end;
 }
-.nav-trigger, nav-close {
+.nav-trigger, .nav-close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
   z-index: 1;
   height: 50px;
   width: 50px;
-  margin: 20px;
   border-radius: 5px;
   border: none;
   display: flex;
@@ -58,20 +60,26 @@ body {
 
 /* MENU */
 .nav {
-  display: none;
-  position:absolute;
+  z-index: 1;
+  position: absolute;
+  right: -2500px;
   width: 100vw;
   height: 100vh;
   background: #402929;
   opacity: 0.92;
-  
   font-size: 32px;
   text-align: center;
+  transition: 0.8s ease-out;
 }
 
 .active {
-  display: block;
+  right: 0; 
 }
+
+.hidden {
+  display: none;
+}
+
 .nav__items {
   height: 100%;
   width: 90%;
@@ -84,15 +92,16 @@ body {
   list-style: none;
   line-height: 1.5;
 }
-.nav__item {}
+
 .nav__link {
   text-decoration: none;
   color: white;
-}
-.nav-close {
-  display: none;
+  transition: 200ms ease;
 }
 
+.nav__link:hover {
+  color: black;
+}
 
 /* MAIN */
 .page__main {
@@ -107,7 +116,6 @@ body {
 .page__main-title {
   margin: 0 0 200px 0;
   width: 100px;
-  /* font-family: "Roboto Slab", sans-serif; */
   text-transform: uppercase;
   color: white;
 }
@@ -137,7 +145,8 @@ body {
 /* Tablet */
 @media all and (min-width: 768px){
   .page__wrapper {
-    margin: 0 60px;
+    margin: 0 auto;
+    padding: 0 30px;
     max-width: 990px;
   }
 
@@ -150,12 +159,12 @@ body {
 /* Desktop */
 @media all and (min-width: 1024px){
   .page__wrapper {
-    margin: auto auto;
-    max-width: 990px;
+    padding: 0 60px;    
   }
 
   .page__main-title {
     font-size: 100px;
+    margin: 0 0 100px 0;
   }
 
   .nav__item {
